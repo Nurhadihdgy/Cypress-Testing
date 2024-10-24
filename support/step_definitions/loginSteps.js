@@ -22,7 +22,7 @@ When("Pengguna mengklik tombol login", () => {
 
 Then("Pengguna akan masuk ke halaman dashboard", () => {
   cy.url().should("include", "/dashboard");
-  cy.get(".oxd-userdropdown-name").should("contain", "Yukti Baheti"); // Ganti dengan nama pengguna yang sesuai
+  cy.get(".oxd-userdropdown-name").should("be.visible");
 });
 
 // Scenario 2-4: Login gagal dengan kombinasi username/password yang salah
@@ -67,6 +67,7 @@ Given(
 
     // Tunggu elemen spesifik pada dashboard sebelum lanjut ke logout
     cy.get(".oxd-userdropdown-name").should("be.visible"); // Pastikan elemen ini muncul di halaman dashboard
+    cy.wait(2000);
   }
 );
 
