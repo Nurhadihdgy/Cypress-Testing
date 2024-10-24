@@ -22,9 +22,7 @@ When("Pengguna mengklik tombol login", () => {
 
 Then("Pengguna akan masuk ke halaman dashboard", () => {
   cy.url().should("include", "/dashboard");
-  cy
-    .get(".oxd-userdropdown-name")
-    .should("contain", "mandaNirgunSanju samsung"); // Ganti dengan nama pengguna yang sesuai
+  cy.get(".oxd-userdropdown-name").should("contain", "Yukti Baheti"); // Ganti dengan nama pengguna yang sesuai
 });
 
 // Scenario 2-4: Login gagal dengan kombinasi username/password yang salah
@@ -66,14 +64,21 @@ Given(
   (username, password) => {
     loginPage.visit();
     loginPage.login(username, password);
+
+    // Tunggu elemen spesifik pada dashboard sebelum lanjut ke logout
+    cy.get(".oxd-userdropdown-name").should("be.visible"); // Pastikan elemen ini muncul di halaman dashboard
   }
 );
 
 When("Pengguna mengklik tombol logout", () => {
+  // Klik dropdown untuk logout
   cy.get(".oxd-userdropdown-name").click();
+
+  // Tunggu hingga opsi logout muncul dan klik logout
   cy.get("a.oxd-userdropdown-link").contains("Logout").click();
 });
 
 Then("Pengguna akan kembali ke halaman login", () => {
+  // Verifikasi bahwa pengguna diarahkan kembali ke halaman login
   cy.url().should("include", "/auth/login");
 });
