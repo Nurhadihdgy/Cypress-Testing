@@ -1,4 +1,3 @@
-// cypress/pages/loginPage.js
 class LoginPage {
   visit() {
     cy.visit(

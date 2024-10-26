@@ -1,6 +1,4 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-// cypress/integration/step_definitions/forgotPasswordSteps.js
-// cypress/integration/step_definitions/forgotPasswordSteps.js
 import ForgotPasswordPage from "../../e2e/page_objects/forgotPasswordPage";
 
 Given("Pengguna berada di halaman forgot password", () => {

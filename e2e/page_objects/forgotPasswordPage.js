@@ -1,4 +1,3 @@
-// cypress/pages/forgotPasswordPage.js
 class ForgotPasswordPage {
   visit() {
     cy.visit(

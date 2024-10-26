@@ -1,27 +1,4 @@
-// cypress/pages/AdminDashboardPage.js
-
 class AdminDashboardPage {
-  // visit() {
-  //   cy.visit(
-  //     "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-  //   );
-  // }
-
-  // enterUsername(username) {
-  //   cy.get(".oxd-input.oxd-input--active").first().type(username);
-  // }
-
-  // enterPassword(password) {
-  //   cy.get(".oxd-input.oxd-input--active").last().type(password);
-  // }
-
-  // clickLoginButton() {
-  //   cy
-  //     .get(
-  //       ".oxd-button.oxd-button--medium.oxd-button--main.orangehrm-login-button"
-  //     )
-  //     .click();
-  // }
   navigateToAdmin() {
     cy.get(".oxd-main-menu-item-wrapper").contains("Admin").click();
   }

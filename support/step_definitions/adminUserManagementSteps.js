@@ -45,7 +45,6 @@ When("I delete the user with username {string}", username => {
   // Intercept request untuk menghapus pengguna
   cy.intercept("DELETE", "**/api/v2/admin/users").as("deleteUserRequest");
 
-  // Mencari pengguna berdasarkan username
   // Menggunakan first() untuk memilih input pertama yang ditemukan
   cy.get(".oxd-input.oxd-input--active").first().type(username);
 

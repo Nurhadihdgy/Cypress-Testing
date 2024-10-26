@@ -1,4 +1,3 @@
-// cypress/integration/step_definitions.js
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage from "../../e2e/page_objects/loginPage";
 
